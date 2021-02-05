@@ -10,7 +10,7 @@ public class AppLayout extends Application {
 	public void start(Stage primaryStage) {
 		try {
 			Parent raiz = null;
-			raiz = new TesteBorderPane();
+			raiz = new TesteFlowPane();
 			
 			Scene principal = new Scene(raiz, 800, 600);
 			
