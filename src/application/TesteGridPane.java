@@ -16,13 +16,13 @@ public class TesteGridPane extends GridPane {
 		Caixa c6 = new Caixa().comTexto("6");
 
 		setGridLinesVisible(true);
-		
-		getColumnConstraints().addAll(cc(), cc(), cc(), cc(), cc());
-		getRowConstraints().addAll(rc(), rc(), rc(), rc(), rc());
-		
+
+		getColumnConstraints().addAll(cc(), cc(), fcc(), cc(), cc());
+		getRowConstraints().addAll(rc(), rc(), frc(), rc(), rc());
+
 		setVgap(10);
 		setHgap(10);
-		
+
 		add(c1, 0, 0, 2, 2);
 		add(c2, 1, 1, 2, 2);
 		add(c3, 4, 2, 1, 3);
@@ -39,9 +39,25 @@ public class TesteGridPane extends GridPane {
 		return cc;
 	}
 
+	private ColumnConstraints fcc() {
+		ColumnConstraints cc = new ColumnConstraints();
+		cc.setMinWidth(50);
+		cc.setMaxWidth(50);
+		cc.setFillWidth(true);
+		return cc;
+	}
+
 	private RowConstraints rc() {
 		RowConstraints rc = new RowConstraints();
 		rc.setMinHeight(20);
+		rc.setFillHeight(true);
+		return rc;
+	}
+
+	private RowConstraints frc() {
+		RowConstraints rc = new RowConstraints();
+		rc.setMinHeight(20);
+		rc.setMaxHeight(20);
 		rc.setFillHeight(true);
 		return rc;
 	}
